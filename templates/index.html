@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/index.css">
+    <title>Video List</title>
+</head>
+
+<body>
+    <h1>Welcome to sreekar's version of netflix</h1>
+    <h2>This is a... umm idk what this is but i am sure i will enjoy making this</h2>
+    <div class="slider one">
+        {% for video in videos %}
+        <div class="movie">
+            <video controls>
+                <source src="{{ video['video_path'] }}" type="video/mp4">
+                Your browser does not support the video tag.
+                <track src="{{ video['subtitle_path'] }}" kind="subtitles" srclang="en" label="English">
+            </video>
+            <p>Video Name: {{ video['video_name'] }}</p>
+            <p>Subtitle File: {{ video['subtitle_path'] }}</p>
+        </div>
+        {% endfor %}
+    </div>
+</body>
+
+</html>
