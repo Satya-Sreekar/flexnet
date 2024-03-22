@@ -1,0 +1,10 @@
+video
+{
+    width: 98vw;
+    height: auto;
+    margin: 0;
+    padding: 0;
+}
+::-webkit-scrollbar {
+    display: none;
+}

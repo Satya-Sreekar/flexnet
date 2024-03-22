@@ -5,25 +5,46 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../static/favicon.ico">
+    <link rel="stylesheet" href="../static/common.css".css">
     <link rel="stylesheet" href="../static/index.css">
-    <title>Video List</title>
+    <link rel="stylesheet" href="../static/nav.css">
+    <script src="../static/index.js" defer></script>
+    <title>Flexnet</title>
 </head>
+<nav>
+    <table>
+        <tr>
+            <td>
+                <a href="/"><img src="../static/favicon.ico" alt="Logo"></a>
+            </td>
+            <td>
+                <a href="/"><h1>Login</h1></a>
+            </td>
+            <td>
+                <a href="{{url_for('logout')}}"><h1>Logout</h1></a>
+            </td>
+        </tr>
+    </table>
+</nav>
 
 <body>
     <h1>Welcome to sreekar's version of netflix</h1>
     <h2>This is a... umm idk what this is but i am sure i will enjoy making this</h2>
     <div class="slider one">
-        {% for video in videos %}
-        <div class="movie">
-            <video controls>
-                <source src="{{ video['video_path'] }}" type="video/mp4">
-                Your browser does not support the video tag.
-                <track src="{{ video['subtitle_path'] }}" kind="subtitles" srclang="en" label="English">
-            </video>
-            <p>Video Name: {{ video['video_name'] }}</p>
-            <p>Subtitle File: {{ video['subtitle_path'] }}</p>
+        <button class="scroll-button left" onclick="scrollToLeft()"></button>
+        <div class="movies-container">
+            {% for movie in movies %}
+            <div class="movie">
+                <form action="watch" method="POST">
+                    <input type="hidden" name="movie_path" value="{{ movie['movie_path'] }}">
+                    <button type="submit"><img src="{{ movie['poster_path'] }}" alt=""></button>
+                </form>                
+                <p>{{ movie['movie_name'] }}</p>
+            </div>
+            {% endfor %}
         </div>
-        {% endfor %}
+        <button class="scroll-button right" onclick="scrollToRight()" style="transform: scaleX(-1);"></button>
     </div>
 </body>
 
