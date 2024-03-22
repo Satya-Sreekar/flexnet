@@ -1,0 +1,35 @@
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/nav.css">
+    <link rel="stylesheet" href="../static/common.css">
+    <link rel="stylesheet" href="../static/watch.css">
+    <link rel="icon" href="../static/favicon.ico">
+    <title>{{ movie_path }}</title>
+</head>
+<nav>
+    <table>
+        <tr>
+            <td>
+                <a href="/"><img src="../static/favicon.ico" alt="Logo"></a>
+            </td>
+            <td>
+                <a href="/"><h1>Login</h1></a>
+            </td>
+            <td>
+                <a href="{{url_for('logout')}}"><h1>Logout</h1></a>
+            </td>
+        </tr>
+    </table>
+</nav>
+<body>
+    <video controls>
+        <source src="{{ movie_path }}" type="video/mp4">
+        <source src="{{ movie_path }}" type="video/mkv">
+        Your browser does not support the video tag.
+    </video>
+    <p>{{movie_path}}</p>
+</body>
+
+</html>
