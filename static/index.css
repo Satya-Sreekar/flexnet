@@ -38,6 +38,10 @@ img {
     object-fit: fill;
     height: auto;
 }
+button
+{
+    background: rgba(0, 0, 0, 0);
+}
 
 button:hover,
 form {

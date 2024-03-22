@@ -13,20 +13,19 @@
     <title>Flexnet</title>
 </head>
 <nav>
-    <table>
-        <tr>
-            <td>
-                <a href="/"><img src="../static/favicon.ico" alt="Logo"></a>
-            </td>
-            <td>
-                <a href="/"><h1>Login</h1></a>
-            </td>
-            <td>
-                <a href="{{url_for('logout')}}"><h1>Logout</h1></a>
-            </td>
-        </tr>
-    </table>
+    <ul>
+        <li>
+            <a href="/"><img src="../static/favicon.ico" alt="Logo"></a>
+        </li>
+        <li>
+            <a href="/">Login</a>
+        </li>
+        <li>
+            <a href="{{url_for('logout')}}">Logout</a>
+        </li>
+    </ul>
 </nav>
+
 
 <body>
     <h1>Welcome to sreekar's version of netflix</h1>
